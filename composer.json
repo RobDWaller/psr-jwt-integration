@@ -1,0 +1,16 @@
+{
+    "name": "rbdwllr/psr-jwt-integration",
+    "description": "The integration test library for psr-jwt",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rob Waller",
+            "email": "rdwaller1984@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.4",
+        "rbdwllr/psr-jwt": "1.0.0.x-dev"
+    }
+}
