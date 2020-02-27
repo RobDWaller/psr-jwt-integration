@@ -14,4 +14,6 @@ require('./read.php');
 
 require('./advanced.php');
 
+require('./curl.php');
+
 $app->run();

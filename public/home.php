@@ -24,5 +24,7 @@ $app->get('/', function (Request $request, Response $response) {
 
     $response->getBody()->write('<p><a href="/advanced">Advanced</a></p>');
 
+    $response->getBody()->write('<p><a href="/curl">Curl</a></p>');
+
     return $response;
 });
