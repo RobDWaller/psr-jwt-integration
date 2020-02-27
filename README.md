@@ -16,6 +16,7 @@ Turn on website:
 
 ```bash
 docker-compose exec psr-jwt bash
+composer update
 cd public
 php -S 0.0.0.0:8080
 ```
