@@ -16,4 +16,6 @@ require('./advanced.php');
 
 require('./curl.php');
 
+require('./custom.php');
+
 $app->run();
