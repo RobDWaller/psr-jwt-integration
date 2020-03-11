@@ -18,7 +18,19 @@ $app->get('/curl', function (Request $request, Response $response) {
 
     $response->getBody()->write("<h1>CURL Test</h1>");
     $response->getBody()->write('<p><a href="http://localhost:8888?token=' . $tokenString . '">Validate Success</a></p>');
-    $response->getBody()->write('<p><a href="http://localhost:8888">Validate Fail</a></p>');
+    
+    $factory1 = new \PsrJwt\Factory\Jwt();
+
+    $builder1 = $factory1->builder();
+
+    $token1 = $builder1->setSecret('!secReT$123*')
+        ->setPayloadClaim('uid', 15)
+        ->setPayloadClaim('exp', time() - 600)
+        ->build();
+
+    $tokenString1 = $token1->getToken();
+    
+    $response->getBody()->write('<p><a href="http://localhost:8888?token=' . $tokenString1 . '">Validate Fail</a></p>');
     $response->getBody()->write('<p><a href="http://localhost:8080">Back</a></p>');
     return $response;
 });
