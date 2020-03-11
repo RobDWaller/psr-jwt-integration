@@ -20,7 +20,7 @@ class MyHandler extends Authorise implements RequestHandlerInterface
         return new Response(
             $auth->getCode(),
             [],
-            '<h1>Fail!</h1><p><a href="/custom">Back</a></p>',
+            '<h1>Custom Fail!</h1><p><a href="/custom">Back</a></p>',
             '1.1',
             $auth->getMessage()
         );
@@ -69,7 +69,7 @@ $app->get('/custom', function (ServerRequestInterface $request, ResponseInterfac
 });
 
 $app->get('/custom/validate', function (ServerRequestInterface $request, ResponseInterface $response) {
-    $response->getBody()->write("<h1>OK!</h1>");
+    $response->getBody()->write("<h1>Custom OK!</h1>");
     $response->getBody()->write('<p><a href="/custom">Back</a></p>');
     return $response;
 })->add($middleware);
